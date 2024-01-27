@@ -1,0 +1,17 @@
+﻿import { Injectable } from '@angular/core';
+import { CoreService } from './core.service';
+import { HttpClient, HttpHeaders } from '@angular/common/http';
+import { Observable } from 'rxjs/Observable';
+
+@Injectable()
+export abstract class AuthorizedService extends CoreService {
+
+  private GetSession(): string {
+    return <string>JSON.parse(localStorage.getItem('session'));
+  }
+
+  public PostAuthorizedRequest<ReturnType, RequestType>(request: RequestType, endpoint: string): Observable<ReturnType> {
+    this.headers = this.headers.set('Authorization', this.GetSession());
+    return this.PostRequest<ReturnType, RequestType>(request, endpoint);
+  }
+}

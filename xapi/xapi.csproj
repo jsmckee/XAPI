@@ -1,0 +1,41 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+		<TargetFramework>netstandard2.0</TargetFramework>
+    <AssemblyName>Korelight.XAPI</AssemblyName>
+    <PackageId>XAPI</PackageId>
+    <GenerateAssemblyConfigurationAttribute>false</GenerateAssemblyConfigurationAttribute>
+    <GenerateAssemblyCompanyAttribute>false</GenerateAssemblyCompanyAttribute>
+    <GenerateAssemblyProductAttribute>false</GenerateAssemblyProductAttribute>
+    <GeneratePackageOnBuild>True</GeneratePackageOnBuild>
+    <PackageRequireLicenseAcceptance>false</PackageRequireLicenseAcceptance>
+    <Authors>Jeremy McKee</Authors>
+    <Description>Provides run time generation of service clients, and documentation.</Description>
+    <PackageProjectUrl>https://github.com/jsmckee/xapi</PackageProjectUrl>
+    <PackageLicenseUrl>https://github.com/jsmckee/xapi/blob/master/LICENSE</PackageLicenseUrl>
+    <Copyright />
+    <RepositoryUrl>https://github.com/jsmckee/xapi</RepositoryUrl>
+    <RootNamespace>Korelight.XAPI</RootNamespace>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <None Remove="Templates\AuthorizedService.tscript" />
+    <None Remove="Templates\CoreService.tscript" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Include="Templates\CoreService.tscript" />
+    <EmbeddedResource Include="Templates\AuthorizedService.tscript" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="DotNetZip" Version="1.11.0" />
+    <PackageReference Include="Microsoft.AspNetCore" Version="2.1.2" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc" Version="2.1.1" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.1.1" />
+    <PackageReference Include="System.ComponentModel" Version="4.3.0" />
+    <PackageReference Include="System.ComponentModel.Annotations" Version="4.5.0" />
+    <PackageReference Include="System.Text.Encoding.CodePages" Version="4.5.0" />
+  </ItemGroup>
+
+</Project>

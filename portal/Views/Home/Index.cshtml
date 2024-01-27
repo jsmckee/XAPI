@@ -1,0 +1,44 @@
+﻿@{
+  ViewData["Title"] = "Home Page";
+}
+<div class="Content" style="text-align: center;">
+  <input class="Button" type="button" value="Get" onclick="TestGET();" />
+  <input class="Button" type="button" value="Put" onclick="TestPUT();" />
+  <input class="Button" type="button" value="Post" onclick="TestPOST();" />
+  <input class="Button" type="button" value="Delete" onclick="TestDELETE();" />
+  <span><a href="~/test/package/?id=ANGULAR">Download</a></span>
+</div>
+<script type="text/javascript">
+  var model;
+
+  function ShowResult(result) {
+    model = result;
+
+    if (model.name) {
+      alert(model.name);
+    }
+    else {
+      alert(model.result);
+    }
+  }
+
+  function ShowError(result) {
+    alert(result);
+  }
+
+  function TestGET() {
+    TestController.TestGET(ShowResult, ShowError);
+  }
+
+  function TestPUT() {
+    TestController.TestPUT(ShowResult, ShowError, model);
+  }
+
+  function TestPOST() {
+    TestController.TestPOST(ShowResult, ShowError, model);
+  }
+
+  function TestDELETE() {
+    TestController.TestDELETE(ShowResult, ShowError, model);
+  }
+</script>

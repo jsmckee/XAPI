@@ -1,0 +1,45 @@
+﻿@{
+  ViewData["Title"] = "Home Page";
+}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>XAPI Demo Project</title>
+  <script src="https://code.jquery.com/jquery-2.1.4.min.js"></script>
+  <script src="Test/api/JQUERY"></script>
+  <style>
+    body {
+      width: 99%;
+      text-align: center;
+      padding-top: 15%;
+    }
+
+    .Button {
+      margin-top: 0.2em;
+      margin-left: auto;
+      margin-right: auto;
+      display: block;
+      font-size: 2.0em;
+      background-color: #ffffff;
+      border: 1px solid #337abe;
+      border-radius: 0.5em;
+      height: 2.5em;
+      width: 10.5em;
+    }
+
+      .Button:hover {
+        cursor: pointer;
+        background-color: #337abe;
+        border-color: #ffffff;
+        color: #ffffff;
+      }
+  </style>
+</head>
+<body>
+  @RenderBody()
+</body>
+
+</html>
